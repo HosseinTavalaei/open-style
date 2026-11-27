@@ -1,0 +1,13 @@
+@use './styles/abstracts' as *;
+
+.container {
+  width: 100%;
+
+  @include responsive(tablet) {
+    width: 80%;
+  }
+
+  @include responsive(desktop) {
+    width: 70%;
+  }
+}

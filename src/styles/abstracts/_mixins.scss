@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use './variables';
+
+@mixin responsive($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $width: map.get($breakpoints, $breakpoint);
+
+    @media (min-width: $width) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint: #{$breakpoint}";
+  }
+}
